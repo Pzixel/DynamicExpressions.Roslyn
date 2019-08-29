@@ -9,7 +9,10 @@ namespace DynamicExpression.Test
     {
         void Test()
         {
-            var _ = SampleClassField.X;
+            var xField = SampleClassField.X;
+
+            var foos = new[] {new SampleClass()}.AsQueryable()
+                .OrderBy(SampleClassExpressionHelper.FieldExpressions[xField]);
         }
     }
 }

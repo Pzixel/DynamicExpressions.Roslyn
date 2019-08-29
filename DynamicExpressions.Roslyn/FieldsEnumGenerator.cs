@@ -146,7 +146,9 @@ namespace DynamicExpressions.Roslyn
                                                                             x, Token(SyntaxKind.CommaToken)
                                                                         })))))))))
                     .WithModifiers(
-                        TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))));
+                        TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))))
+                .WithModifiers(
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)));
 
             return Task.FromResult(List<MemberDeclarationSyntax>().Add(generatedEnum).Add(helperClass));
         }
